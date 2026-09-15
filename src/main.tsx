@@ -15,10 +15,26 @@ createRoot(document.getElementById('root')!).render(
 	</StrictMode>,
 )
 
-// скрываем splash после первого кадра
-requestAnimationFrame(() => {
+// Плавное появление: ждём загрузки шрифтов + первого кадра
+const hideSplash = async () => {
 	const splash = document.getElementById('splash')
 	if (!splash) return
-	splash.classList.add('hide')
-	setTimeout(() => splash.remove(), 500)
-})
+
+	// ждём шрифты (если поддерживается API)
+	try {
+		await document.fonts?.ready
+	} catch {
+		// игнорируем — старые браузеры
+	}
+
+	// ждём ещё один кадр, чтобы всё отрисовалось с финальными шрифтами
+	requestAnimationFrame(() => {
+		requestAnimationFrame(() => {
+			splash.classList.add('hide')
+			document.documentElement.classList.add('ready')
+			setTimeout(() => splash.remove(), 700)
+		})
+	})
+}
+
+hideSplash()
