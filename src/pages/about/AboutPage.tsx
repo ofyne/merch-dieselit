@@ -84,7 +84,7 @@ export const AboutPage = () => (
 
 					<ul className={styles.list}>
 						<li className={styles.listItem}>
-							<strong>Proven by time.</strong> The project is over 6 months old.
+							<strong>Proven by time.</strong>
 							We’re not a one-day fly.
 						</li>
 						<li className={styles.listItem}>
