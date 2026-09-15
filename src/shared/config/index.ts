@@ -1,1 +1,0 @@
-export { mockProducts } from './products'
