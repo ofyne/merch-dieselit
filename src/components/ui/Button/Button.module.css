@@ -1,0 +1,93 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	border: var(--border-sketch);
+	border-radius: var(--radius-sketch-sm);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	box-shadow: var(--shadow-sketch-sm);
+	transition:
+		transform var(--dur-fast) var(--ease-sketch),
+		box-shadow var(--dur-fast) var(--ease-sketch),
+		background var(--dur) var(--ease-sketch),
+		color var(--dur) var(--ease-sketch);
+	user-select: none;
+	white-space: nowrap;
+	min-height: 44px; /* тач-таргет */
+}
+
+.btn:hover {
+	transform: translate(-1px, -1px);
+	box-shadow: var(--shadow-sketch);
+}
+
+.btn:active {
+	transform: translate(1px, 1px);
+	box-shadow: 1px 1px 0 0 var(--shadow-color);
+}
+
+.btn:focus-visible {
+	outline: 2px dashed var(--color-ink);
+	outline-offset: 2px;
+}
+
+.primary {
+	background: var(--btn-bg);
+	color: var(--btn-fg);
+}
+
+.secondary {
+	background: transparent;
+	color: var(--color-ink);
+}
+
+.ghost {
+	background: transparent;
+	color: var(--color-ink);
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.ghost:hover {
+	box-shadow: none;
+	border-color: var(--color-line);
+}
+
+.sm {
+	padding: 10px 18px;
+	font-size: 14px;
+	min-height: 40px;
+}
+
+.md {
+	padding: 12px 22px;
+	font-size: 15px;
+}
+
+.lg {
+	padding: 14px 28px;
+	font-size: 16px;
+	min-height: 52px;
+}
+
+@media (min-width: 640px) {
+	.sm {
+		padding: 8px 16px;
+		font-size: 14px;
+		min-height: 36px;
+	}
+
+	.md {
+		padding: 11px 22px;
+		font-size: 15px;
+		min-height: 42px;
+	}
+
+	.lg {
+		padding: 14px 32px;
+		font-size: 17px;
+		min-height: 48px;
+	}
+}

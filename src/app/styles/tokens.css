@@ -1,0 +1,66 @@
+:root,
+:root[data-theme='light'] {
+	--color-bg: #f4f4f5;
+	--color-surface: #ffffff;
+	--color-elevated: #fafafa;
+	--color-ink: #1a1a1a;
+	--color-ink-2: #3f3f46;
+	--color-muted: #8a8a94;
+	--color-line: #1a1a1a;
+
+	--btn-bg: #1a1a1a;
+	--btn-fg: #ffffff;
+	--btn-bg-ghost: transparent;
+	--btn-fg-ghost: #1a1a1a;
+
+	--shadow-color: #1a1a1a;
+}
+
+:root[data-theme='dark'] {
+	--color-bg: #17171a;
+	--color-surface: #1f1f23;
+	--color-elevated: #26262b;
+	--color-ink: #f4f4f5;
+	--color-ink-2: #c9c9cf;
+	--color-muted: #8a8a94;
+	--color-line: #f4f4f5;
+
+	--btn-bg: #f4f4f5;
+	--btn-fg: #17171a;
+	--btn-bg-ghost: transparent;
+	--btn-fg-ghost: #f4f4f5;
+
+	--shadow-color: #f4f4f5;
+}
+
+:root {
+	--shadow-sketch-sm: 2px 2px 0 0 var(--shadow-color);
+	--shadow-sketch: 4px 4px 0 0 var(--shadow-color);
+	--shadow-sketch-lg: 6px 6px 0 0 var(--shadow-color);
+
+	--radius-sketch-sm: 8px 10px 9px 11px;
+	--radius-sketch: 12px 14px 11px 15px;
+
+	--border-sketch: 2px solid var(--color-line);
+	--border-sketch-thick: 3px solid var(--color-line);
+
+	--font-display: 'Caveat', 'Comic Sans MS', cursive;
+	--font-hand: 'Shantell Sans', 'Comic Sans MS', cursive;
+	--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+	--container: 1200px;
+
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-10: 40px;
+	--space-12: 48px;
+
+	--ease-sketch: cubic-bezier(0.2, 0.8, 0.2, 1);
+	--dur-fast: 90ms;
+	--dur: 160ms;
+}

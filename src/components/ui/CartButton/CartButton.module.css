@@ -1,0 +1,50 @@
+.root {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+
+	border: var(--border-sketch);
+	border-radius: var(--radius-sketch-sm);
+	background: var(--color-surface);
+	color: var(--color-ink);
+	box-shadow: var(--shadow-sketch-sm);
+
+	transition:
+		transform var(--dur-fast) var(--ease-sketch),
+		box-shadow var(--dur-fast) var(--ease-sketch);
+}
+
+.root:hover {
+	transform: translate(-1px, -1px);
+	box-shadow: var(--shadow-sketch);
+}
+
+.root:active {
+	transform: translate(1px, 1px);
+	box-shadow: 1px 1px 0 0 var(--shadow-color);
+}
+
+.badge {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 5px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	background: var(--btn-bg);
+	color: var(--btn-fg);
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1;
+
+	border: 2px solid var(--color-line);
+	border-radius: 999px;
+}

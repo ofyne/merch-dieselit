@@ -1,0 +1,348 @@
+.hero {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-5);
+
+	padding-block: 40px 48px;
+	min-width: 0;
+
+	overflow: clip;
+}
+
+/* ─── декор ────────────────────────────────────── */
+.decoCircle {
+	position: absolute;
+	top: 10px;
+	right: -60px;
+
+	color: var(--color-line);
+	opacity: 0.1;
+
+	pointer-events: none;
+	z-index: 0;
+
+	animation: deco-rotate 60s linear infinite;
+}
+
+.decoStar1 {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	color: var(--color-ink);
+	pointer-events: none;
+	z-index: 1;
+
+	transform: rotate(-12deg);
+	animation: deco-bob 4s ease-in-out infinite;
+}
+
+.decoSparkle1 {
+	position: absolute;
+	top: 100px;
+	right: 30px;
+
+	color: var(--color-ink);
+	pointer-events: none;
+	z-index: 1;
+
+	animation: deco-spin 8s linear infinite;
+}
+
+.decoSparkle2 {
+	position: absolute;
+	top: 40px;
+	left: -6px;
+
+	color: var(--color-ink);
+	opacity: 0.5;
+	pointer-events: none;
+	z-index: 1;
+
+	animation: deco-spin 6s linear infinite reverse;
+}
+
+.decoSquiggle {
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+
+	color: var(--color-ink);
+	opacity: 0.35;
+	pointer-events: none;
+	z-index: 1;
+
+	transform: rotate(8deg);
+}
+
+.decoArrow {
+	display: none;
+}
+
+@keyframes deco-rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes deco-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes deco-bob {
+	0%,
+	100% {
+		transform: rotate(-12deg) translateY(0);
+	}
+	50% {
+		transform: rotate(-8deg) translateY(-4px);
+	}
+}
+
+/* ─── бейдж ─────────────────────────────────────── */
+.badge {
+	position: relative;
+	z-index: 2;
+
+	display: inline-flex;
+	align-items: center;
+
+	padding: 6px 14px;
+
+	background: var(--color-surface);
+	color: var(--color-ink);
+	font-family: var(--font-hand);
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+
+	border: 2px solid var(--color-line);
+	border-radius: 14px 10px 15px 11px;
+
+	transform: rotate(-2deg);
+	box-shadow: 3px 3px 0 0 var(--shadow-color);
+}
+
+/* ─── заголовок ────────────────────────────────── */
+.title {
+	position: relative;
+	z-index: 2;
+
+	font-family: var(--font-display);
+	font-size: clamp(40px, 11vw, 84px);
+	line-height: 0.95;
+	letter-spacing: 0.005em;
+	overflow-wrap: break-word;
+	max-width: 720px;
+}
+
+.accent {
+	position: relative;
+	font-style: italic;
+	text-decoration: underline;
+	text-decoration-thickness: 4px;
+	text-underline-offset: 6px;
+	text-decoration-color: var(--color-line);
+	text-decoration-style: wavy;
+}
+
+.titleUnderline {
+	position: relative;
+	z-index: 1;
+	margin-top: -18px;
+	margin-left: 8px;
+	color: var(--color-line);
+	opacity: 0.5;
+	pointer-events: none;
+	display: none;
+}
+
+.subtitle {
+	position: relative;
+	z-index: 2;
+
+	font-family: var(--font-hand);
+	font-size: 17px;
+	line-height: 1.5;
+	font-weight: 500;
+	color: var(--color-ink-2);
+	max-width: 520px;
+	overflow-wrap: break-word;
+}
+
+.actions {
+	position: relative;
+	z-index: 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 12px;
+	margin-top: 6px;
+	width: 100%;
+	max-width: 340px;
+}
+
+/* ─── FEATURED ─────────────────────────────────── */
+.featured {
+	display: grid;
+	gap: 20px;
+	padding-block: 40px 48px;
+	min-width: 0;
+}
+
+.featuredHead {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.featuredTitleWrap {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.featuredSparkle {
+	color: var(--color-ink);
+	animation: deco-spin 6s linear infinite;
+}
+
+.featuredTitle {
+	font-family: var(--font-display);
+	font-size: clamp(36px, 9vw, 56px);
+	line-height: 1;
+	letter-spacing: 0.005em;
+}
+
+.featuredGrid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 20px;
+	min-width: 0;
+
+	/* место под рисованную тень карточек */
+	padding: 6px 8px 10px 6px;
+	margin: -6px -8px 0 -6px;
+}
+
+/* ─── TABLET ───────────────────────────────────── */
+@media (min-width: 640px) {
+	.hero {
+		gap: var(--space-6);
+		padding-block: 56px 64px;
+	}
+
+	.titleUnderline {
+		display: block;
+	}
+
+	.subtitle {
+		font-size: 18px;
+	}
+
+	.actions {
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: auto;
+		max-width: none;
+	}
+
+	.featured {
+		gap: 24px;
+		padding-block: 48px 64px;
+	}
+
+	.featuredGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 24px;
+		padding: 6px 10px 12px 6px;
+		margin: -6px -10px 0 -6px;
+	}
+
+	.decoArrow {
+		display: block;
+		position: absolute;
+		bottom: -10px;
+		left: 40%;
+
+		color: var(--color-ink);
+		opacity: 0.6;
+		pointer-events: none;
+
+		transform: rotate(6deg);
+	}
+
+	.decoCircle {
+		top: 0;
+		right: -80px;
+	}
+
+	.decoStar1 {
+		top: 24px;
+		right: 60px;
+	}
+
+	.decoSparkle1 {
+		top: 110px;
+		right: 100px;
+	}
+}
+
+/* ─── DESKTOP ──────────────────────────────────── */
+@media (min-width: 960px) {
+	.hero {
+		max-width: 820px;
+		margin-inline: auto;
+		padding-block: 64px 72px;
+		overflow: visible; /* ← на десктопе декор выходит за hero и это ок */
+	}
+
+	.featured {
+		padding-block: 64px 72px;
+	}
+
+	.featuredGrid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 32px;
+		padding: 6px 12px 16px 6px;
+		margin: -6px -12px 0 -6px;
+	}
+
+	.decoCircle {
+		top: -20px;
+		right: -140px;
+		opacity: 0.13;
+	}
+
+	.decoStar1 {
+		top: 20px;
+		right: -60px;
+	}
+
+	.decoSparkle1 {
+		top: 120px;
+		right: 140px;
+	}
+
+	.decoSquiggle {
+		right: 40px;
+		bottom: 30px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.decoCircle,
+	.decoStar1,
+	.decoSparkle1,
+	.decoSparkle2,
+	.featuredSparkle {
+		animation: none;
+	}
+}
