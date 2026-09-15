@@ -9,5 +9,5 @@ Allow: /
 Disallow: /cart
 Disallow: /admin
 
-Sitemap: https://dieselit-merch.vip/sitemap.xml
-Host: https://dieselit-merch.vip
+Sitemap: https://dieselit.vip/sitemap.xml
+Host: https://dieselit.vip

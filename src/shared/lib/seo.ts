@@ -9,7 +9,7 @@ export type SeoProps = {
 }
 
 const SITE_NAME = 'DIESELit'
-const SITE_URL = 'https://dieselit-merch.vip'
+const SITE_URL = 'https://dieselit.vip'
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`
 
 const setMeta = (attr: 'name' | 'property', key: string, content: string) => {
