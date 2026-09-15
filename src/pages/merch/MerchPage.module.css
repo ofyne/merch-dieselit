@@ -34,3 +34,11 @@
 		font-size: 17px;
 	}
 }
+
+.state {
+	font-family: var(--font-hand);
+	font-size: 18px;
+	color: var(--color-muted);
+	padding-block: var(--space-8);
+	text-align: center;
+}

@@ -121,6 +121,8 @@ export const AboutPage = () => (
 								</a>
 							</li>
 						))}
+
+						{/* MADE BY SOCIA */}
 					</ul>
 
 					<div className={styles.cta}>

@@ -28,3 +28,5 @@ export const NotFoundPage = () => (
 		</Container>
 	</>
 )
+
+// MADE BY SOCIA

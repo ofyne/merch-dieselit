@@ -15,7 +15,7 @@
 		color var(--dur) var(--ease-sketch);
 	user-select: none;
 	white-space: nowrap;
-	min-height: 44px; /* тач-таргет */
+	min-height: 44px;
 }
 
 .btn:hover {

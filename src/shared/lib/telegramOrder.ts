@@ -16,7 +16,6 @@ type CartOrder = {
 	info?: string
 }
 
-// ─── Single order ───────────────────────────────────
 export const buildOrderUrl = ({ product, size, info }: SingleOrder) => {
 	const lines = [
 		'ɴᴇᴡ ᴏʀᴅᴇʀ',
@@ -36,7 +35,6 @@ export const openOrder = (params: SingleOrder) => {
 	window.open(buildOrderUrl(params), '_blank', 'noopener,noreferrer')
 }
 
-// ─── Cart order ─────────────────────────────────────
 export const buildCartOrderUrl = ({ items, total, info }: CartOrder) => {
 	const itemsBlock = items
 		.map((i, idx) => {

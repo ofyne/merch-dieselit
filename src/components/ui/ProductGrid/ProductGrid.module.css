@@ -3,7 +3,6 @@
 	grid-template-columns: minmax(0, 1fr);
 	gap: 20px;
 
-	/* место под рисованную тень карточек */
 	padding: 6px 8px 10px 6px;
 	margin: -6px -8px 0 -6px;
 }

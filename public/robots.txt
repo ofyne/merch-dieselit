@@ -9,5 +9,5 @@ Allow: /
 Disallow: /cart
 Disallow: /admin
 
-Sitemap: https://dieselit.vip/sitemap.xml
-Host: https://dieselit.vip
+Sitemap: https://dieselit.trade/sitemap.xml
+Host: https://dieselit.trade

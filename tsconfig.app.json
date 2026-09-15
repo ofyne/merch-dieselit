@@ -6,6 +6,9 @@
 		"module": "esnext",
 		"types": ["vite/client"],
 
+		// MADE BY SOCIA
+		// MADE BY SOCIA
+
 		"paths": {
 			"@/*": ["./src/*"]
 		},

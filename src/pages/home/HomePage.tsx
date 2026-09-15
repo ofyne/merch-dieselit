@@ -10,11 +10,12 @@ import {
 } from '@/components/ui/Doodles'
 import { ProductCard } from '@/components/ui/ProductCard'
 import { Seo } from '@/components/ui/Seo'
-import { mockProducts } from '@/shared/config'
+import { useProducts } from '@/shared/api'
 import styles from './HomePage.module.css'
 
 export const HomePage = () => {
-	const featured = mockProducts.slice(0, 3)
+	const { data: products, isLoading } = useProducts()
+	const featured = (products ?? []).slice(0, 3)
 
 	return (
 		<>
@@ -60,24 +61,28 @@ export const HomePage = () => {
 					<Arrow className={styles.decoArrow} size={70} />
 				</section>
 
-				<section className={styles.featured}>
-					<div className={styles.featuredHead}>
-						<div className={styles.featuredTitleWrap}>
-							<Sparkle className={styles.featuredSparkle} size={22} />
-							<h2 className={styles.featuredTitle}>Featured</h2>
+				{(isLoading || featured.length > 0) && (
+					<section className={styles.featured}>
+						<div className={styles.featuredHead}>
+							<div className={styles.featuredTitleWrap}>
+								<Sparkle className={styles.featuredSparkle} size={22} />
+								<h2 className={styles.featuredTitle}>Featured</h2>
+							</div>
+							<Button variant="ghost" to="/merch">
+								See all →
+							</Button>
 						</div>
-						<Button variant="ghost" to="/merch">
-							See all →
-						</Button>
-					</div>
 
-					<div className={styles.featuredGrid}>
-						{featured.map(p => (
-							<ProductCard key={p.id} product={p} />
-						))}
-					</div>
-				</section>
+						<div className={styles.featuredGrid}>
+							{featured.map(p => (
+								<ProductCard key={p.id} product={p} />
+							))}
+						</div>
+					</section>
+				)}
 			</Container>
 		</>
 	)
 }
+
+// MADE BY SOCIA

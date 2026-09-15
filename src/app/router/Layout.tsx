@@ -12,3 +12,5 @@ export const Layout = () => (
 		<Footer />
 	</div>
 )
+
+// MADE BY SOCIAs

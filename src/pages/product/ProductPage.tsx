@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { SafeImage } from '@/components/ui/SafeImage'
 import { Seo } from '@/components/ui/Seo'
-import { mockProducts } from '@/shared/config'
+import { useProduct } from '@/shared/api'
 import { formatPrice } from '@/shared/lib/formatPrice'
 import { buildProductJsonLd } from '@/shared/lib/seo'
 import { openOrder } from '@/shared/lib/telegramOrder'
@@ -16,19 +16,43 @@ import {
 	ShoppingBag,
 	Zap,
 } from 'lucide-react'
-import { useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router'
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router'
 import styles from './ProductPage.module.css'
 
 export const ProductPage = () => {
-	const { slug } = useParams<{ slug: string }>()
-	const product = mockProducts.find(p => p.slug === slug)
+	const { slug = '' } = useParams<{ slug: string }>()
+	const { data: product, isLoading, isError } = useProduct(slug)
 
-	const [size, setSize] = useState<ProductSize | undefined>(product?.sizes[0])
+	const [size, setSize] = useState<ProductSize | undefined>()
 	const [activeIdx, setActiveIdx] = useState(0)
 	const addToCart = useCart(s => s.add)
 
-	if (!product) return <Navigate to="/merch" replace />
+	useEffect(() => {
+		if (product?.sizes.length && !size) {
+			setSize(product.sizes[0])
+		}
+	}, [product, size])
+
+	if (isLoading) {
+		return (
+			<Container>
+				<div className={styles.loading}>Loading…</div>
+			</Container>
+		)
+	}
+
+	if (isError || !product) {
+		return (
+			<Container>
+				<div className={styles.loading}>Product not found.</div>
+				<Link to="/merch" className={styles.back}>
+					<ArrowLeft size={16} strokeWidth={2.5} />
+					Back to catalog
+				</Link>
+			</Container>
+		)
+	}
 
 	const total = product.images.length
 	const activeImage = product.images[activeIdx] ?? product.images[0]

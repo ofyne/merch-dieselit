@@ -11,6 +11,8 @@ export const useTheme = () => {
 		localStorage.setItem(STORAGE_KEY, theme)
 	}, [theme])
 
+	// MADE BY SOCIA
+
 	const setTheme = useCallback((t: Theme) => setThemeState(t), [])
 	const toggle = useCallback(
 		() => setThemeState(t => (t === 'light' ? 'dark' : 'light')),

@@ -33,7 +33,6 @@
 	min-width: 0;
 }
 
-/* ─── ФОТО ─────────────────────────────────────── */
 .media {
 	position: relative;
 	aspect-ratio: 1 / 1;
@@ -166,7 +165,6 @@
 	box-shadow: 2px 2px 0 0 var(--shadow-color);
 }
 
-/* ─── КАРТОЧКА С ИНФОЙ ─────────────────────────── */
 .infoCard {
 	display: flex;
 	flex-direction: column;
@@ -286,7 +284,6 @@
 	line-height: 1.5;
 }
 
-/* ─── ДЕСКТОП ──────────────────────────────────── */
 @media (min-width: 880px) {
 	.root {
 		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -371,4 +368,12 @@
 	.note {
 		margin-block: auto;
 	}
+}
+
+.loading {
+	font-family: var(--font-hand);
+	font-size: 20px;
+	color: var(--color-muted);
+	padding-block: var(--space-12);
+	text-align: center;
 }

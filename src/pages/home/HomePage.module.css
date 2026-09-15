@@ -11,7 +11,6 @@
 	overflow: clip;
 }
 
-/* ─── декор ────────────────────────────────────── */
 .decoCircle {
 	position: absolute;
 	top: 10px;
@@ -103,7 +102,6 @@
 	}
 }
 
-/* ─── бейдж ─────────────────────────────────────── */
 .badge {
 	position: relative;
 	z-index: 2;
@@ -127,7 +125,6 @@
 	box-shadow: 3px 3px 0 0 var(--shadow-color);
 }
 
-/* ─── заголовок ────────────────────────────────── */
 .title {
 	position: relative;
 	z-index: 2;
@@ -187,7 +184,6 @@
 	max-width: 340px;
 }
 
-/* ─── FEATURED ─────────────────────────────────── */
 .featured {
 	display: grid;
 	gap: 20px;
@@ -227,12 +223,10 @@
 	gap: 20px;
 	min-width: 0;
 
-	/* место под рисованную тень карточек */
 	padding: 6px 8px 10px 6px;
 	margin: -6px -8px 0 -6px;
 }
 
-/* ─── TABLET ───────────────────────────────────── */
 @media (min-width: 640px) {
 	.hero {
 		gap: var(--space-6);
@@ -295,13 +289,12 @@
 	}
 }
 
-/* ─── DESKTOP ──────────────────────────────────── */
 @media (min-width: 960px) {
 	.hero {
 		max-width: 820px;
 		margin-inline: auto;
 		padding-block: 64px 72px;
-		overflow: visible; /* ← на десктопе декор выходит за hero и это ок */
+		overflow: visible;
 	}
 
 	.featured {

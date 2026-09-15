@@ -6,8 +6,9 @@ export type Product = {
 	title: string
 	description: string
 	price: number
-	images: string[] // 1–5 фото, первое — обложка
+	images: string[]
 	sizes: ProductSize[]
 	inStock: boolean
 	createdAt: string
+	updatedAt: string
 }

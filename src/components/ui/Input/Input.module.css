@@ -1,0 +1,41 @@
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-width: 0;
+}
+
+.label {
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--color-muted);
+}
+
+.input {
+	width: 100%;
+	padding: 10px 14px;
+
+	background: var(--color-surface);
+	color: var(--color-ink);
+	border: 2px solid var(--color-line);
+	border-radius: var(--radius-sketch-sm);
+	font-size: 15px;
+
+	transition: box-shadow var(--dur) var(--ease-sketch);
+}
+
+.input:focus {
+	outline: none;
+	box-shadow: var(--shadow-sketch-sm);
+}
+
+.hasError {
+	border-color: #e63946;
+}
+
+.error {
+	font-size: 12px;
+	color: #e63946;
+}

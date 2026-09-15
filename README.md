@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+# MADE BY SOCIA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MADE BY SOCIA
 
-Currently, two official plugins are available:
+# MADE BY SOCIA
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# MADE BY SOCIA
 
-## React Compiler
+# MADE BY SOCIA
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# MADE BY SOCIA
 
-## Expanding the ESLint configuration
+# MADE BY SOCIA
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# MADE BY SOCIA
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# MADE BY SOCIA
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# MADE BY SOCIA
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# MADE BY SOCIA
 
-```
+# MADE BY SOCIA
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## LINK -> t.me/socia
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## LINK -> t.me/socia
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## LINK -> t.me/socia
 
-```
+## LINK -> t.me/socia
+
+## LINK -> t.me/socia
+
+## LINK -> t.me/socia
+
+## LINK -> t.me/socia
+
+## LINK -> t.me/ofyne
