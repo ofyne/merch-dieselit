@@ -117,7 +117,7 @@ export const AboutPage = () => (
 									rel="noopener noreferrer"
 									className={styles.socialLink}
 								>
-									{s.label} →
+									→{s.label}←
 								</a>
 							</li>
 						))}
