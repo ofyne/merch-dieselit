@@ -50,21 +50,19 @@
 
 .list {
 	display: grid;
-	gap: var(--space-4);
+	gap: var(--space-5);
 	min-width: 0;
+	padding: 4px 8px 12px 4px;
+	margin: -4px -8px 0 -4px;
 }
 
+/* ─── КАРТОЧКА ────────────────────────────────── */
 .item {
-	display: grid;
-	grid-template-columns: 80px minmax(0, 1fr) auto;
-	grid-template-areas:
-		'media info remove'
-		'media qty total';
-	column-gap: var(--space-3);
-	row-gap: var(--space-2);
-	align-items: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 
-	padding: var(--space-4);
 	background: var(--color-surface);
 	border: 2px solid var(--color-line);
 	border-radius: 20px 16px 22px 18px;
@@ -76,64 +74,62 @@
 	min-width: 0;
 }
 
+/* фото сверху, на всю ширину карточки */
 .media {
-	grid-area: media;
-	width: 80px;
-	height: 80px;
-	border-radius: 14px 11px 16px 13px;
-	border: 2px solid var(--color-line);
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-bottom: 2px solid var(--color-line);
 	overflow: hidden;
 	background: var(--color-elevated);
-	flex: 0 0 auto;
 }
 
+/* инфо под фото */
 .info {
-	grid-area: info;
 	display: grid;
 	gap: 4px;
+	padding: var(--space-4) var(--space-4) 0;
 	min-width: 0;
 }
 
 .itemTitle {
 	font-family: var(--font-hand);
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 700;
-	line-height: 1.2;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	min-width: 0;
+	line-height: 1.15;
+	overflow-wrap: break-word;
 }
 
 .size {
-	font-size: 12px;
-	color: var(--color-muted);
-}
-
-.itemPrice {
 	font-size: 13px;
 	color: var(--color-muted);
 }
 
-.qty {
-	grid-area: qty;
-	justify-self: start;
+.itemPrice {
+	font-size: 14px;
+	color: var(--color-muted);
+	margin-top: 2px;
+}
 
+/* строка снизу: qty слева, итог справа */
+.qty {
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
 
+	margin: var(--space-4) var(--space-4) var(--space-4);
+
 	border: 2px solid var(--color-line);
-	border-radius: 11px 9px 12px 10px;
-	padding: 3px;
+	border-radius: 12px 10px 13px 11px;
+	padding: 4px;
+	align-self: flex-start;
 }
 
 .qtyBtn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 28px;
-	height: 28px;
+	width: 32px;
+	height: 32px;
 	color: var(--color-ink);
 }
 
@@ -142,38 +138,58 @@
 }
 
 .qtyValue {
-	min-width: 22px;
+	min-width: 24px;
 	text-align: center;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 }
 
+/* итог — абсолютом в правый нижний угол */
 .itemTotal {
-	grid-area: total;
-	justify-self: end;
+	position: absolute;
+	right: var(--space-4);
+	bottom: var(--space-4);
 
 	font-family: var(--font-hand);
-	font-size: 20px;
+	font-size: 22px;
 	font-weight: 700;
 	white-space: nowrap;
 }
 
+/* крестик — в правом верхнем углу фото */
 .remove {
-	grid-area: remove;
-	justify-self: end;
-	align-self: start;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
 
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	width: 36px;
 	height: 36px;
-	color: var(--color-muted);
-	transition: color var(--dur) var(--ease-sketch);
+
+	background: var(--color-surface);
+	border: 2px solid var(--color-line);
+	border-radius: 12px 10px 13px 11px;
+	color: var(--color-ink);
+
+	box-shadow: 3px 3px 0 0 var(--shadow-color);
+	transition:
+		transform var(--dur-fast) var(--ease-sketch),
+		box-shadow var(--dur-fast) var(--ease-sketch),
+		color var(--dur) var(--ease-sketch);
 }
 
 .remove:hover {
 	color: #e63946;
+	transform: translate(-1px, -1px);
+	box-shadow: 4px 4px 0 0 var(--shadow-color);
+}
+
+.remove:active {
+	transform: translate(1px, 1px);
+	box-shadow: 1px 1px 0 0 var(--shadow-color);
 }
 
 .summary {
@@ -201,6 +217,7 @@
 	width: 100%;
 }
 
+/* ─── ДЕСКТОП ────────────────────────────────── */
 @media (min-width: 720px) {
 	.root {
 		gap: var(--space-6);
@@ -209,13 +226,17 @@
 
 	.list {
 		gap: var(--space-5);
+		padding: 4px 10px 14px 4px;
+		margin: -4px -10px 0 -4px;
 	}
 
+	/* на десктопе — горизонтальная раскладка обратно */
 	.item {
+		display: grid;
 		grid-template-columns: 96px minmax(0, 1fr) auto auto auto;
-		grid-template-areas: none;
+		align-items: center;
 		column-gap: var(--space-6);
-		row-gap: 0;
+
 		padding: var(--space-5);
 		box-shadow:
 			0 0 0 4px var(--color-surface),
@@ -225,25 +246,25 @@
 	.media {
 		width: 96px;
 		height: 96px;
+		aspect-ratio: auto;
+		border-bottom: none;
+		border-radius: 14px 11px 16px 13px;
+		border: 2px solid var(--color-line);
+	}
+
+	.info {
+		padding: 0;
 	}
 
 	.itemTitle {
 		font-size: 20px;
-		white-space: normal;
-		overflow: visible;
-	}
-
-	.size {
-		font-size: 13px;
-	}
-
-	.itemPrice {
-		font-size: 14px;
 	}
 
 	.qty {
+		margin: 0;
 		gap: 6px;
 		padding: 4px;
+		align-self: center;
 	}
 
 	.qtyBtn {
@@ -255,14 +276,18 @@
 		font-size: 15px;
 	}
 
+	/* на десктопе итог возвращаем в поток */
 	.itemTotal {
+		position: static;
 		font-size: 22px;
 	}
 
 	.remove {
+		position: static;
 		width: 40px;
 		height: 40px;
 		align-self: center;
+		box-shadow: var(--shadow-sketch-sm);
 	}
 
 	.summaryLabel {
