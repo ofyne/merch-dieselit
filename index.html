@@ -4,12 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Favicon & Manifest -->
 		<link rel="icon" type="image/png" href="/icon.png" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 
-		<!-- Theme color per scheme -->
 		<meta
 			name="theme-color"
 			content="#f4f4f5"
@@ -21,7 +19,6 @@
 			media="(prefers-color-scheme: dark)"
 		/>
 
-		<!-- Primary -->
 		<title>DIESELit — Official Merch Store</title>
 		<meta
 			name="description"
@@ -36,7 +33,6 @@
 		<meta name="format-detection" content="telephone=no" />
 		<link rel="canonical" href="https://dieselit-merch.vip/" />
 
-		<!-- Open Graph -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="DIESELit" />
 		<meta property="og:title" content="DIESELit — Official Merch Store" />
@@ -51,7 +47,6 @@
 		<meta property="og:url" content="https://dieselit-merch.vip/" />
 		<meta property="og:locale" content="en_US" />
 
-		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@DIESEL_COIN25" />
 		<meta name="twitter:creator" content="@DIESEL_COIN25" />
@@ -62,17 +57,54 @@
 		/>
 		<meta name="twitter:image" content="/og-image.jpg" />
 
-		<!-- Preconnect -->
 		<link rel="preconnect" href="https://t.me" />
 
-		<!-- JSON-LD: Organization -->
+		<!-- Splash: только на время загрузки, чёрный фон -->
+		<style>
+			#splash {
+				position: fixed;
+				inset: 0;
+				z-index: 9999;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				background: #17171a;
+				transition: opacity 400ms ease;
+			}
+
+			#splash.hide {
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			#splash-logo {
+				width: 64px;
+				height: 64px;
+				animation: splash-pulse 1.6s ease-in-out infinite;
+			}
+
+			@keyframes splash-pulse {
+				0%,
+				100% {
+					transform: scale(1);
+					opacity: 0.85;
+				}
+				50% {
+					transform: scale(1.08);
+					opacity: 1;
+				}
+			}
+		</style>
+
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "Organization",
 				"name": "DIESELit",
 				"url": "https://dieselit-merch.vip",
-				"logo": "https://dieselit-merch.vip/favicon.svg",
+				"logo": "https://dieselit-merch.vip/icon.png",
 				"sameAs": [
 					"https://t.me/+IpLNl8Ih0URhYjNk",
 					"https://x.com/DIESEL_COIN25",
@@ -86,7 +118,6 @@
 			}
 		</script>
 
-		<!-- JSON-LD: WebSite with SearchAction -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -97,6 +128,10 @@
 		</script>
 	</head>
 	<body>
+		<div id="splash">
+			<img id="splash-logo" src="/icon.png" alt="DIESELit" />
+		</div>
+
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>
