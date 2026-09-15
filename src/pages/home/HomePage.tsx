@@ -32,7 +32,9 @@ export const HomePage = () => {
 					<Sparkle className={styles.decoSparkle2} size={18} />
 					<Squiggle className={styles.decoSquiggle} size={70} />
 
-					<span className={styles.badge}>New drop · 2026</span>
+					<span className={styles.badge}>
+						New drop · {new Date().getFullYear()}
+					</span>
 
 					<h1 className={styles.title}>
 						Fuel prices are <span className={styles.accent}>rising</span>, but
