@@ -14,3 +14,11 @@ createRoot(document.getElementById('root')!).render(
 		</BrowserRouter>
 	</StrictMode>,
 )
+
+// скрываем splash после первого кадра
+requestAnimationFrame(() => {
+	const splash = document.getElementById('splash')
+	if (!splash) return
+	splash.classList.add('hide')
+	setTimeout(() => splash.remove(), 500)
+})
